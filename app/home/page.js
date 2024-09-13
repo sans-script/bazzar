@@ -40,7 +40,7 @@ function Home() {
       if (!product) {
         throw new Error("Produto não encontrado");
       }
-      const response = await fetch("http://localhost:5000/api/cart", {
+      const response = await fetch("https://bazzar-39eb.onrender.com/api/cart", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ function Home() {
   const removeFromCart = async (product_id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/cart/${product_id}`,
+        `https://bazzar-39eb.onrender.com/api/cart/${product_id}`,
         {
           method: "DELETE",
           headers: {
@@ -94,7 +94,7 @@ function Home() {
   const decreaseQuantity = async (product_id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/cart/${product_id}`,
+        `https://bazzar-39eb.onrender.com/api/cart/${product_id}`,
         {
           method: "GET",
           headers: {
@@ -117,7 +117,7 @@ function Home() {
       } else {
         const newQuantity = item.quantity - 1;
         const updateResponse = await fetch(
-          `http://localhost:5000/api/cart/${product_id}`,
+          `https://bazzar-39eb.onrender.com/api/cart/${product_id}`,
           {
             method: "PATCH",
             headers: {
@@ -392,7 +392,7 @@ function Home() {
               >
                 <div className="flex w-full h-40 items-center justify-center">
                   <Image
-                    src={`http://localhost:5000/${product.image_url}`}
+                    src={`https://bazzar-39eb.onrender.com/${product.image_url}`}
                     alt={product.name}
                     width={110}
                     height={100}
@@ -459,7 +459,7 @@ function Home() {
                 <div className="flex gap-1 items-center">
                   <div className="flex items-center justify-center w-8 h-8">
                     <Image
-                      src={`http://localhost:5000/${item.image_url}`}
+                      src={`https://bazzar-39eb.onrender.com/${item.image_url}`}
                       alt={item.name}
                       width={100}
                       height={100}

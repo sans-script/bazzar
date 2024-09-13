@@ -16,7 +16,7 @@ export default function Home() {
 
     const getCartItems = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/cart/1"); // Corrigido para corresponder à rota do backend
+        const response = await fetch("https://bazzar-39eb.onrender.com/api/cart/1"); // Corrigido para corresponder à rota do backend
         if (!response.ok) {
           throw new Error("Erro ao buscar itens do carrinho");
         }
@@ -43,7 +43,7 @@ export default function Home() {
         throw new Error("Quantidade inválida");
       }
 
-      const response = await fetch("http://localhost:5000/api/cart", {
+      const response = await fetch("https://bazzar-39eb.onrender.com/api/cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +83,7 @@ export default function Home() {
               <p>${product.price}</p>
               <p>{product.image_url}</p>
               <Image
-                src={`http://localhost:5000/${product.image_url}`} // URL direta para a imagem
+                src={`https://bazzar-39eb.onrender.com/${product.image_url}`} // URL direta para a imagem
                 alt={product.name}
                 width={200} // Largura da imagem
                 height={200} // Altura da imagem
@@ -104,7 +104,7 @@ export default function Home() {
                 <h2>{item.name}</h2>
                 <p>${item.price}</p>
                 <Image
-                  src={`http://localhost:5000/${item.image_url}`} // Certifique-se de que o caminho da imagem está correto
+                  src={`https://bazzar-39eb.onrender.com/${item.image_url}`} // Certifique-se de que o caminho da imagem está correto
                   alt={item.name}
                   width={200}
                   height={200}

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['localhost'],
+      domains: ['bazzar-39eb.onrender.com']
       },
 };
 
