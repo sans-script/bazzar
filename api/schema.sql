@@ -4,6 +4,7 @@ CREATE TABLE products (
     description TEXT,
     price DECIMAL(10, 2) NOT NULL,
     stock INT NOT NULL DEFAULT 0
+    image_url VARCHAR(255);
 );
 
 
@@ -19,5 +20,8 @@ CREATE TABLE cart (
     id SERIAL PRIMARY KEY,
     product_id INT REFERENCES products(id),
     quantity INT NOT NULL,
-    user_id VARCHAR(50) -- Pode ser um identificador único do usuário
+    user_id VARCHAR(50)
 );
+
+
+senha: aw5IftqOym3LbsTakSEmK0PrnS6wmjhL psql -h dpg-cribpq8gph6c73cq2t90-a.oregon-postgres.render.com -U sans sans_v1se

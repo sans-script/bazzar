@@ -26,6 +26,7 @@ const pool = new Pool({
   password: process.env.PGPASSWORD,
   database: process.env.PGDATABASE,
   port: process.env.PGPORT,
+  ssl: true
 });
 
 app.use(cors(corsOptions));
