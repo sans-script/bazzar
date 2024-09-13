@@ -1,0 +1,73 @@
+GET http://localhost:5000/api/products
+
+###
+curl -X POST http://localhost:5000/api/register \
+-H "Content-Type: application/json" \
+-d '{
+  "username": "alex",
+  "email": "alex@teste.com",
+  "password": "senha123"
+}'
+
+###
+curl -X POST http://localhost:5000/api/login \
+-H "Content-Type: application/json" \
+-d '{
+  "email": "alex@teste.com",
+  "password": "senha123"
+}'
+
+###
+curl -X POST http://localhost:5000/api/cart \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGV4QHRlc3RlLmNvbSIsImlhdCI6MTcyNjI1MDI2NCwiZXhwIjoxNzI2MjUzODY0fQ.mjvHzrGeXoEPt8zO6U18zP1hSYiswlcUhHplv49wYbM" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": 1,
+    "product_id": 5,
+    "quantity": 1
+  }'
+
+###
+curl -X GET http://localhost:5000/api/cart \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGV4QHRlc3RlLmNvbSIsImlhdCI6MTcyNjI1NTM0OCwiZXhwIjoxNzI2MjU4OTQ4fQ.z2wF3ZG3qHV6nqWlPux7d9a8km5rOw6hMzYUl0KhTs4"
+
+
+###
+curl -X DELETE "http://localhost:5000/api/cart/6" \
+     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGV4QHRlc3RlLmNvbSIsImlhdCI6MTcyNjI0OTgzNCwiZXhwIjoxNzI2MjUzNDM0fQ.YH_8-lPZxkw-dge528CSzVFY_8uTrNgc_R4GkhJqRpw" \
+     -H "Content-Type: application/json"
+
+
+
+# Outro Usuário
+
+###
+curl -X POST http://localhost:5000/api/register \
+-H "Content-Type: application/json" \
+-d '{
+  "username": "Alex Santos",
+  "email": "alexandre@teste.com",
+  "password": "senhamuitosegura"
+}'
+
+###
+curl -X POST http://localhost:5000/api/login \
+-H "Content-Type: application/json" \
+-d '{
+  "email": "alexandre@teste.com",
+  "password": "senhamuitosegura"
+}'
+
+###
+curl -X POST http://localhost:5000/api/cart \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhbGV4YW5kcmVAdGVzdGUuY29tIiwiaWF0IjoxNzI2MjQ1NzYyLCJleHAiOjE3MjYyNDkzNjJ9.gHCN9GE9CXPkwAIJuvVtBnkiU_7QTcu-rMm-oQ6lNCQ" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "user_id": 1,
+    "product_id": 3,
+    "quantity": 5
+  }'
+
+###
+curl -X GET http://localhost:5000/api/cart \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhbGV4YW5kcmVAdGVzdGUuY29tIiwiaWF0IjoxNzI2MjQ1NzYyLCJleHAiOjE3MjYyNDkzNjJ9.gHCN9GE9CXPkwAIJuvVtBnkiU_7QTcu-rMm-oQ6lNCQ"
