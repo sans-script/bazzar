@@ -18,7 +18,7 @@ if (!jwtSecret) {
 }
 
 const corsOptions = {
-  origin: "https://bazzar-sigma.vercel.app/:3000",
+  origin: "https://bazzar-sigma.vercel.app:3000",
 };
 const pool = new Pool({
   host: process.env.PGHOST,
