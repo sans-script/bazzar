@@ -1,23 +1,23 @@
 # Bazzar - E-commerce Full-Stack Application
 
-**Bazzar** is a full-stack e-commerce application built to explore React using **Next.js** for the frontend and **Express.js** for the backend. This project features a product catalog that users can interact with and a shopping cart for managing their selected items. The application is entirely custom-built, with its name and design conceived by me. Bazzar represents an idea I had for an e-commerce platform, and it’s now a reality.
+**Bazzar** is a full-stack e-commerce application designed to explore React using **Next.js** for the frontend and **Express.js** for the backend. This project features a product catalog for browsing and managing selected items through a shopping cart. The application is entirely custom-built, with its name and design created by me. Bazzar embodies an idea for an e-commerce platform that I had, and it's now a reality.
 
 ## Features
 - **Product Catalog**: Browse and add various products to your shopping cart.
 - **User Authentication**: Secure login and session management using **JWT (JSON Web Tokens)**.
 - **Shopping Cart**: Add, remove, and update product quantities in your cart.
-- **PostgreSQL Integration**: Utilizes advanced SQL concepts for managing user data, product details, and cart operations.
+- **PostgreSQL Integration**: Utilizes advanced SQL concepts to manage user data, product details, and cart operations.
 
 ## Authentication with JWT
-JWTs are essential for managing authentication securely. Unlike traditional session storage, JWTs allow us to generate a token upon successful login. This token is sent to the client and stored locally (in localStorage or cookies). It is then used to authenticate future requests, ensuring that sensitive user information is securely transmitted between the client and the server. This method enhances the scalability and security of the application, especially in multi-device environments.
+JWTs are essential for secure authentication. Unlike traditional session storage, JWTs generate a token upon successful login. This token is sent to the client and stored locally (in localStorage or cookies). It is then used to authenticate future requests, ensuring sensitive user information is securely transmitted between the client and the server. This method enhances scalability and security, particularly in multi-device environments.
 
 ## Exploring Advanced SQL Concepts
-During the development of this project, I explored advanced SQL techniques to ensure efficient data management. Key concepts implemented include:
-- **Join Queries**: To fetch user-specific cart data by combining the products and cart tables.
-- **Transactions and Concurrency**: To ensure data updates (e.g., cart modifications) are handled atomically and without conflicts.
-- **Parameterized Queries**: To protect against SQL injection attacks and maintain database security.
+Throughout this project, advanced SQL techniques were employed to ensure efficient data management. Key concepts include:
+- **Join Queries**: Retrieve user-specific cart data by combining the products and cart tables.
+- **Transactions and Concurrency**: Ensure data updates (e.g., cart modifications) are handled atomically and without conflicts.
+- **Parameterized Queries**: Protect against SQL injection attacks and maintain database security.
 
-Here is an example of an advanced SQL query used to retrieve a user's cart items:
+Example SQL query to retrieve a user's cart items:
 
 ```sql
 SELECT c.id, c.product_id, p.name, p.description, p.price, c.quantity, p.image_url
@@ -27,7 +27,7 @@ WHERE c.user_id = $1;
 ```
 
 ## Product Management
-The product catalog is managed by inserting products directly into the PostgreSQL database. Below is an example SQL command used to insert products:
+The product catalog is managed by inserting products directly into the PostgreSQL database. Example SQL command for inserting products:
 
 ```sql
 INSERT INTO products (name, description, price, stock, image_url)
@@ -48,5 +48,10 @@ VALUES
 - `GET /api/cart` – Manage the shopping cart.
 
 For testing requests and exploring API endpoints, refer to the [requests.http](./requests.http) file for more details.
+
+## Quick Login
+For quick testing, use the following credentials:
+- **Email**: alex@test.com
+- **Password**: alex@test.com
 
 **Please note:** Since the backend is hosted on a platform with a free plan, occasional issues or downtime may occur. I will do my best to keep the project online and address any problems promptly.
