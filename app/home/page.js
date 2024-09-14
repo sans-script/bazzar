@@ -40,18 +40,21 @@ function Home() {
       if (!product) {
         throw new Error("Produto não encontrado");
       }
-      const response = await fetch("https://bazzar-39eb.onrender.com/api/cart", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          user_id: 1,
-          product_id: product.id,
-          quantity: 1,
-        }),
-      });
+      const response = await fetch(
+        "https://bazzar-39eb.onrender.com/api/cart",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            user_id: 1,
+            product_id: product.id,
+            quantity: 1,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Erro ao adicionar ao carrinho");
@@ -364,10 +367,10 @@ function Home() {
 
         <div className="flex relative w-full h-96 overflow-hidden bg-[#FF3300] shadow-lg rounded-[35px]">
           <div className="absolute p-6 z-20">
-            <h1 className="text-white font-bold text-5xl w-40 leading-[70px] italic">
+            <h1 className="text-white font-bold text-3xl lg:text-5xl w-40 leading-[70px] italic p-4">
               Decorative Pillowcases Velvet
             </h1>
-            <h2 className="text-white font-bold text-3xl italic">
+            <h2 className="text-white font-bold text-xl lg:text-3xl italic p-4">
               Bring charm and modernity to <br></br> your interior
             </h2>
           </div>
@@ -416,7 +419,9 @@ function Home() {
             ))
           ) : (
             <div className="w-full flex gap-2 items-center justify-center pt-5 h-80">
-              <h1 className="font-bold">None of the products match the search</h1>
+              <h1 className="font-bold">
+                No products found
+              </h1>
               <h1 className="font-bold text-[#FF3300] text-xl">:&#40;</h1>
             </div>
           )}
@@ -425,13 +430,13 @@ function Home() {
         <div
           className={
             showCart
-              ? "absolute p-2 top-28 rounded-lg right-14 bg-white w-[500px] h-[400px] shadow-lg z-50 flex flex-col gap-4 overflow-auto"
+              ? "absolute p-2 top-28 rounded-lg right-12 lg:right-14 bg-white w-[300px] lg:w-[500px] h-[400px] shadow-lg z-50 flex flex-col gap-4 overflow-auto"
               : "hidden"
           }
         >
           {cartItems.length === 0 && (
             <div className="flex flex-col items-center justify-center gap-10 w-full h-full">
-              <h1 className="font-bold text-3xl">The cart is empty 😪</h1>
+              <h1 className="font-bold text-2xl lg:text-3xl">The cart is empty 😪</h1>
               <svg
                 className="w-40 h-40"
                 viewBox="0 0 24 24"
@@ -453,7 +458,7 @@ function Home() {
             return (
               <div
                 key={item.id}
-                className="flex items-center justify-between p-2 gap-2 w-full h-14 border border-[#999999] rounded-[18px]"
+                className="flex flex-wrap items-center justify-between p-2 gap-2 w-full border border-[#999999] rounded-[18px]"
               >
                 <div className="flex gap-1 items-center">
                   <div className="flex items-center justify-center w-8 h-8">
@@ -465,12 +470,12 @@ function Home() {
                     />
                   </div>
                   <h2 className="font-bold truncate w-40">{item.name}</h2>
-                  <h2 className="font-bold truncate max-w-40 text-[#FF3300]">
-                    US$ {item.price}
-                  </h2>
                 </div>
 
                 <div className="flex gap-4 items-center justify-center">
+                  <h2 className="font-bold truncate max-w-40 text-[#FF3300]">
+                    US$ {item.price}
+                  </h2>
                   {/* Botão de Deletar item do carrinho */}
                   <button
                     onClick={() => removeFromCart(item.product_id)}
@@ -542,7 +547,7 @@ function Home() {
                     </svg>
                   </button>
                 </div>
-                <h2 className="font-bold text-xl">x{item.quantity}</h2>
+                <h2 className="font-bold text-xl w-10">x{item.quantity}</h2>
               </div>
             );
           })}
