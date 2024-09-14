@@ -1,73 +1,103 @@
+# Fetch all products from the API
 GET https://bazzar-39eb.onrender.com/api/products
 
 ###
+
+# Register a new user
+# Replace YOUR_USERNAME, YOUR_EMAIL, and YOUR_PASSWORD with the user's details
 curl -X POST https://bazzar-39eb.onrender.com/api/register \
 -H "Content-Type: application/json" \
 -d '{
-  "username": "alex",
-  "email": "alex@teste.com",
-  "password": "senha123"
+  "username": "YOUR_USERNAME",
+  "email": "YOUR_EMAIL",
+  "password": "YOUR_PASSWORD"
 }'
 
 ###
+
+# Login with an existing user
+# Replace YOUR_EMAIL and YOUR_PASSWORD with the user's credentials
 curl -X POST https://bazzar-39eb.onrender.com/api/login \
 -H "Content-Type: application/json" \
 -d '{
-  "email": "alex@teste.com",
-  "password": "senha123"
+  "email": "YOUR_EMAIL",
+  "password": "YOUR_PASSWORD"
 }'
 
 ###
+
+# Add an item to the cart
+# Replace YOUR_JWT_TOKEN with the JWT obtained from login
+# Replace YOUR_USER_ID, YOUR_PRODUCT_ID, and YOUR_QUANTITY with the relevant details
 curl -X POST https://bazzar-39eb.onrender.com/api/cart \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGV4QHRlc3RlLmNvbSIsImlhdCI6MTcyNjI1MDI2NCwiZXhwIjoxNzI2MjUzODY0fQ.mjvHzrGeXoEPt8zO6U18zP1hSYiswlcUhHplv49wYbM" \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "user_id": 1,
-    "product_id": 5,
-    "quantity": 1
+    "user_id": YOUR_USER_ID,
+    "product_id": YOUR_PRODUCT_ID,
+    "quantity": YOUR_QUANTITY
   }'
 
 ###
-curl -X GET https://bazzar-39eb.onrender.com/api/cart \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGV4QHRlc3RlLmNvbSIsImlhdCI6MTcyNjI1NTM0OCwiZXhwIjoxNzI2MjU4OTQ4fQ.z2wF3ZG3qHV6nqWlPux7d9a8km5rOw6hMzYUl0KhTs4"
 
+# Retrieve the user's cart items
+# Replace YOUR_JWT_TOKEN with the JWT obtained from login
+curl -X GET https://bazzar-39eb.onrender.com/api/cart \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
 ###
-curl -X DELETE "https://bazzar-39eb.onrender.com/api/cart/6" \
-     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGV4QHRlc3RlLmNvbSIsImlhdCI6MTcyNjI0OTgzNCwiZXhwIjoxNzI2MjUzNDM0fQ.YH_8-lPZxkw-dge528CSzVFY_8uTrNgc_R4GkhJqRpw" \
+
+# Remove an item from the cart
+# Replace YOUR_JWT_TOKEN with the JWT obtained from login
+# Replace YOUR_CART_ITEM_ID with the ID of the item you want to remove
+curl -X DELETE "https://bazzar-39eb.onrender.com/api/cart/YOUR_CART_ITEM_ID" \
+     -H "Authorization: Bearer YOUR_JWT_TOKEN" \
      -H "Content-Type: application/json"
 
-
-
-# Outro Usuário
+# Another User
 
 ###
+
+# Register another new user
+# Replace ANOTHER_USERNAME, ANOTHER_EMAIL, and ANOTHER_PASSWORD with the user's details
 curl -X POST https://bazzar-39eb.onrender.com/api/register \
 -H "Content-Type: application/json" \
 -d '{
-  "username": "Alex Santos",
-  "email": "alexandre@teste.com",
-  "password": "senhamuitosegura"
+  "username": "ANOTHER_USERNAME",
+  "email": "ANOTHER_EMAIL",
+  "password": "ANOTHER_PASSWORD"
 }'
 
 ###
+
+# Login with another existing user
+# Replace ANOTHER_EMAIL and ANOTHER_PASSWORD with the user's credentials
 curl -X POST https://bazzar-39eb.onrender.com/api/login \
 -H "Content-Type: application/json" \
 -d '{
-  "email": "alexandre@teste.com",
-  "password": "senhamuitosegura"
+  "email": "ANOTHER_EMAIL",
+  "password": "ANOTHER_PASSWORD"
 }'
 
 ###
+
+# Add an item to the cart for another user
+# Replace ANOTHER_JWT_TOKEN with the JWT obtained from login
+# Replace ANOTHER_USER_ID, ANOTHER_PRODUCT_ID, and ANOTHER_QUANTITY with the relevant details
 curl -X POST https://bazzar-39eb.onrender.com/api/cart \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhbGV4YW5kcmVAdGVzdGUuY29tIiwiaWF0IjoxNzI2MjQ1NzYyLCJleHAiOjE3MjYyNDkzNjJ9.gHCN9GE9CXPkwAIJuvVtBnkiU_7QTcu-rMm-oQ6lNCQ" \
+  -H "Authorization: Bearer ANOTHER_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "user_id": 1,
-    "product_id": 3,
-    "quantity": 5
+    "user_id": ANOTHER_USER_ID,
+    "product_id": ANOTHER_PRODUCT_ID,
+    "quantity": ANOTHER_QUANTITY
   }'
 
 ###
+
+# Retrieve the cart items for another user
+# Replace ANOTHER_JWT_TOKEN with the JWT obtained from login
 curl -X GET https://bazzar-39eb.onrender.com/api/cart \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhbGV4YW5kcmVAdGVzdGUuY29tIiwiaWF0IjoxNzI2MjQ1NzYyLCJleHAiOjE3MjYyNDkzNjJ9.gHCN9GE9CXPkwAIJuvVtBnkiU_7QTcu-rMm-oQ6lNCQ"
+  -H "Authorization: Bearer ANOTHER_JWT_TOKEN"
+
+# Note: If you are testing locally, replace the API URL with http://localhost:5000
