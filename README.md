@@ -1,9 +1,9 @@
 # Bazzar - E-commerce Full-Stack Application
 
-**Bazzar** is a full-stack e-commerce application designed to explore React using **Next.js** for the frontend and **Express.js** for the backend. This project features a product catalog for browsing and managing selected items through a shopping cart. The application is entirely custom-built, with its name and design created by me. Bazzar embodies an idea for an e-commerce platform that I had, and it's now a reality.
+**Bazzar** is a full-stack e-commerce application designed to explore React using **Next.js** for the frontend and **Express.js** for the backend. This project features a product catalog for browsing and managing selected items through a shopping cart. The application is entirely custom-built, with its name and design created by me. Bazzar was an idea I had for an e-commerce platform some time ago, and now it’s coming to life.
 
 ## Features
-- **Product Catalog**: Browse and add various products to your shopping cart.
+- **Product Catalog**: Browse and add some products to your shopping cart.
 - **User Authentication**: Secure login and session management using **JWT (JSON Web Tokens)**.
 - **Shopping Cart**: Add, remove, and update product quantities in your cart.
 - **PostgreSQL Integration**: Utilizes advanced SQL concepts to manage user data, product details, and cart operations.
