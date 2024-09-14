@@ -60,7 +60,6 @@ function Home() {
       setCartItems(updatedCartItems);
 
       const result = await response.json();
-      console.log("Produto adicionado ao carrinho:", result);
     } catch (error) {
       console.error(error);
     }
