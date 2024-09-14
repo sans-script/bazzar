@@ -13,12 +13,12 @@ const saltRounds = 10;
 const jwtSecret = process.env.JWT_SECRET;
 
 if (!jwtSecret) {
-  console.error("JWT_SECRET is missing on .env");
+  console.error("JWT_SECRET is missing in.env");
   process.exit(1);
 }
 
 const corsOptions = {
-  origin: "https://bazzar-sigma.vercel.app",
+  origin: ["https://bazzar-sigma.vercel.app", "http://localhost:3000"],
 };
 const pool = new Pool({
   host: process.env.PGHOST,

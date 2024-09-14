@@ -13,13 +13,16 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://bazzar-39eb.onrender.com/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://bazzar-39eb.onrender.com/api/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Credenciais inválidas");
@@ -38,7 +41,7 @@ function Login() {
 
   return (
     <main className="flex items-center justify-center w-screen h-screen bg-[#F5F5F5]">
-      <div className="flex items-center justify-center lg:justify-start w-9/12 h-5/6 bg-white shadow-lg rounded-[35px] px-10 py-8">
+      <div className="flex items-center justify-center lg:justify-start w-9/12 h-5/6 lg:bg-white lg:shadow-lg rounded-[35px] px-10 py-8">
         <div className="hidden relative lg:flex flex-col w-96 h-full bg-[#FF3300] shadow-lg rounded-[35px]">
           <div className="pt-10 pl-10">
             <h1 className="w-72 font-extrabold italic text-4xl leading-[80px]  text-white">

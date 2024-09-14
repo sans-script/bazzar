@@ -14,13 +14,16 @@ function SignUp() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://bazzar-39eb.onrender.com/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, email, password }),
-      });
+      const response = await fetch(
+        "https://bazzar-39eb.onrender.com/api/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, email, password }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Falha ao registrar usuário");
@@ -34,8 +37,8 @@ function SignUp() {
   };
 
   return (
-    <main className="flex items-center justify-center w-screen h-screen bg-[#F5F5F5]">
-      <div className="flex items-center justify-center lg:justify-start w-9/12 h-5/6 bg-white shadow-lg rounded-[35px] px-10 py-8">
+    <main className="flex items-center justify-center w-screen h-screen bg-[#F5F5F5] ">
+      <div className="flex items-center justify-center lg:justify-start w-9/12 h-5/6 lg:bg-white lg:shadow-lg rounded-[35px] px-10 py-8">
         <div className="hidden relative lg:flex flex-col w-96 h-full bg-[#FF3300] shadow-lg rounded-[35px]">
           <div className="pt-10 pl-10">
             <h1 className="w-72 font-extrabold italic text-4xl leading-[80px]  text-white">
@@ -349,13 +352,13 @@ function SignUp() {
                 {error && (
                   <p className="text-red-500 text-center mt-2">{error}</p>
                 )}
+                <button
+                  onClick={() => router.push("/")}
+                  className="border w-full h-14 bg-[#FF3300] text-white font-bold rounded-[18px]"
+                >
+                  Login
+                </button>
               </form>
-              <button
-                onClick={() => router.push("/")}
-                className="border w-full h-14 bg-[#FF3300] text-white font-bold rounded-[18px]"
-              >
-                Login
-              </button>
             </div>
 
             {/* <small className="w-full text-center text-[#999999]">
