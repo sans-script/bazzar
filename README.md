@@ -8,6 +8,18 @@
 - **Shopping Cart**: Add, remove, and update product quantities in your cart.
 - **PostgreSQL Integration**: Utilizes advanced SQL concepts to manage user data, product details, and cart operations.
 
+## Tools and Technologies Used
+
+- **Frontend**: React.js, Next.js, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: PostgreSQL
+- **Authentication**: JWT (JSON Web Tokens)
+- **Deployment**: Vercel (Frontend), Render (Backend)
+- **Version Control**: Git, GitHub
+- **Containerization**: Docker
+- **Others**: REST API, HTML5, CSS3, JavaScript (ES6+), dotenv
+- **Design**: Figma
+
 ## Authentication with JWT
 JWTs are essential for secure authentication. Unlike traditional session storage, JWTs generate a token upon successful login. This token is sent to the client and stored locally (in localStorage or cookies). It is then used to authenticate future requests, ensuring sensitive user information is securely transmitted between the client and the server. This method enhances scalability and security, particularly in multi-device environments.
 
@@ -54,4 +66,5 @@ For quick testing, use the following credentials:
 - **Email**: alex@test.com
 - **Password**: alex@test.com
 
-**Please note:** Since the backend is hosted on a platform with a free plan, occasional issues or downtime may occur. I will do my best to keep the project online and address any problems promptly.
+> [!NOTE]  
+> Since the backend is hosted on a platform with a free plan, occasional issues or downtime may occur. I will do my best to keep the project online and address any problems promptly.
